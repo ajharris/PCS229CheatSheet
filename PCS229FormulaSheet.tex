@@ -1,0 +1,310 @@
+\documentclass[12pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref} 
+\usepackage{times}
+
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+
+\newcommand{\nucl}[3]{
+\ensuremath{
+\phantom{\ensuremath{^{#1}_{#2}}}
+\llap{\ensuremath{^{#1}}}
+\llap{\ensuremath{_{\rule{0pt}{.75em}#2}}}
+\mbox{#3}
+}
+}
+
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\smallsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\underline{PCS229 Formula Sheet}} \\
+\end{center}
+
+\begin{multicols}{4}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%  \setlength{\columnseprule}{0.25pt}
+ \setlength{\premulticols}{1pt}
+ \setlength{\postmulticols}{1pt}
+ \setlength{\multicolsep}{1pt}
+ \setlength{\columnsep}{2pt}
+
+
+
+\section{Units \& Constants}
+
+\subsection{Radio Decay}
+
+$1eV = 1.6 \times 10^{-19}J$
+
+$m_{nucleon} = 1.67\times 10^{-27}kg$
+
+$m_{electron} = 9.11\times 10^{-31}kg$
+
+$M_{H} = 1.007825 u$
+
+$M_{n} = 1.008665 u$
+
+$M_{e} = 0.00055 u$
+
+$1 amu = 1.4924\times 10^{-10} J = 931.5 MeV$
+
+$1 Ci = 3.7\times 10^{10} Bq$
+
+$1 b = 10^{-24} cm^2 = 10^{-28}m^2$
+
+\subsection{Radiation Interactions}
+$w_{air} = 33.85 eV/ion\:pair$
+
+$E_{\beta} = 0.511MeV$
+
+$1 R = 2.58\times 10^{-4}C/kg\: air$
+
+
+\subsection{Dose}
+$1Gy = 100 rad = 1J/kg$
+
+$1Sv = 1J/kg = 1Gy$
+
+$1Sv = 100 rem$
+
+$Risk/Dose = 5 \times 10^{-4}/rem = 5\times 10^{-6}/Sv$
+
+\section{Radioactive Decay}
+$\nucl{235}{92}{U} = \nucl{A}{Z}{X}$
+
+$r \approx (1.2\times 10^{-15})A^{1/3}$
+
+$\rho = \frac{m_{nucleon}}{\frac{4}{3}\pi(1.2\times 10^{-15})}$
+
+$E_{B} = \Delta m \times amu = (Zm_{H}+(A-Z)M_{n}-M_{element})\times
+(\frac{931MeV}{1 amu}) $
+
+$\nucl{A}{Z}{P} \rightarrow \nucl{A-4}{Z-2}{D} + \nucl{4}{2}{He}$
+
+$Q = M_{P}-M_{D}-M_{He}-2M_{e}$
+
+$\nucl{A}{Z}{P} \rightarrow \nucl{A}{Z+1}{D}+
+{}^{0}_{-1}\beta^-+{}^{0}_{0}\bar{v}$
+
+$\nucl{A}{Z}{P} \rightarrow \nucl{A}{Z+1}{D}+
+{}^{0}_{1}\beta^++{}^{0}_{0}v + e^-$
+
+$E_{\beta eff} \approx \frac{1}{3}E_{max}$
+
+$\nucl{A}{Z}{P} + {}^{0}_{-1}e^- \rightarrow \nucl{A}{Z-1}{D} + {}^{0}_{0}v$
+
+$\nucl{A}{Z}{P}^* \rightarrow \nucl{A}{Z}{P} + \gamma$
+
+$\nucl{A}{Z}{P}^*\rightarrow \nucl{A}{Z}{P}^+ + e^- +Q_{IC} \rightarrow
+\nucl{A}{Z}{P}$
+
+$\alpha_{IC} = \frac{P(IC)}{P(\gamma)} = \frac{N_{IC}}{N_{\gamma}}$
+
+$p \rightarrow \alpha<\beta<\gamma $
+
+$i \rightarrow \alpha>\beta>\gamma$
+
+$\frac{\Delta N}{\Delta t} = -\lambda N = -\frac{ln(2)}{T_{1/2}}N =
+\frac{dN}{dt}$
+
+$\tau = \frac{1}{\lambda}, N = N_0e^{-\lambda t}, A = \lambda N = A_0e^{-\lambda
+t}$
+
+$D = P_0\frac{\lambda_P}{\lambda_D - \lambda_P}(e^{-\lambda_P
+t}-e^{-\lambda_D t})$
+
+for
+$T_{1/2}(P)>>T_{1/2}(D),\frac{D\lambda_D}{P\lambda_P}\approx\frac{\lambda_D}{\lambda_D-\lambda_P}$
+
+for
+$T_{1/2}(P)<<T_{1/2}(D),\frac{D\lambda_D}{P\lambda_P}\approx
+(1-e^{-\lambda_Dt})$
+
+$N(t) = \frac{K}{\lambda}(1-e^{-\lambda t})$
+
+$N(t) = \phi\rho\theta\frac{mNa}{M}\frac{1}{\lambda}(1-e^{-\lambda t})$
+
+for
+$t<<T_{1/2}, N(t) = \phi\rho\theta\frac{mN_A}{M}t$
+
+for
+$t>>T_{1/2}, N(t) = \phi\rho\theta\frac{mN_A}{M}\frac{1}{\lambda}$
+
+\section{Radiation Interactions}
+
+$-\frac{dE}{dx} = \mu Q_{max}$
+
+Bethe stopping power
+
+$-\frac{dE}{dx} = \frac{4\pi e^4z^2\rho Z}{m_e} \left[
+ln  \frac{2m_ev^2}{I} - ln(1-\beta^2)-\beta^2 \right] $
+
+$S = \frac{dE/dx}{\rho}$
+$LET = \frac{dE_L}{dl}$
+
+$-\frac{dE}{dx} = (w)(Specific\: Ionization)$
+
+$\rho_m = \frac{S_{medium}}{S_{air}}$
+
+for
+$0.01MeV<KE_{max}<3MeV$, 
+$R = 412(T_{\beta max})^{1.265-0.0954 ln(T_{\beta max})}$
+
+for
+$1 MeV<KE_{max}<20 MeV$, 
+$R = 530(T_{\beta max})-106$
+
+$E_{electron} = E_{\gamma} - E_{B} = h\nu - E_{B}$
+
+$E'_\gamma = \frac{E_\gamma}{1+\frac{E_\gamma}{m_0c^2}(1-cos\theta)}, E_\gamma
+> 2m_0c^2$
+
+$\lambda ' = \lambda + \frac{h}{m_0 c}(1-cos\theta)$
+
+\section{Radiation Dose}
+
+$\phi = \frac{N}{A}, \varphi = \frac{\phi}{t}$
+
+$\Psi = \phi E,  \psi = \varphi E = I$
+
+$D = \frac{E_{absorbed}}{m}$, RBE Dose $D\times RBE$
+
+$H_T = \sum\limits_{R} w_R D_{T,R}, H_E = \sum\limits_{T} w_T H_T$
+
+$E \propto f(\frac{t}{r^2})$
+
+
+
+\begin{tablehere}
+
+\begin{tabular}{|l|l|}
+\hline
+Radiation                                                                                       & Q \\ \hline
+X, $\gamma$, $\beta$                                                               
+& 1         \\ \hline Neutrons                                                                                        &           \\ \hline
+Thermal                                                                                         & 2         \\ \hline
+0.01 MeV                                                                                        & 2.5       \\ \hline
+0.1 MeV                                                                                         & 7.5       \\ \hline
+0.5 MeV                                                                                         & 11        \\ \hline
+Unknown Energy                                                                                  & 10        \\ \hline
+High-energy protons                                                                             & 10        \\ \hline
+\begin{tabular}[c]{@{}c@{}}$\alpha$ particles, \\ fission fragments, \\ heavy
+nuclei\end{tabular} & 20        \\ \hline
+\end{tabular}
+\end{tablehere}
+
+
+
+\begin{tablehere}
+
+\begin{tabular}{|l|l|}
+\hline
+Organ                                                                                                                              & $w_T$ \\ \hline
+Gonads                                                                                                                             & 0.20  \\ \hline
+Colon                                                                                                                              & 0.12  \\ \hline
+Bone Marrow                                                                                                                        & 0.12  \\ \hline
+Lung                                                                                                                               & 0.12  \\ \hline
+Stomach                                                                                                                            & 0.12  \\ \hline
+Bladder                                                                                                                            & 0.05  \\ \hline
+Chest                                                                                                                              & 0.05  \\ \hline
+Liver                                                                                                                              & 0.05  \\ \hline
+Thyroid                                                                                                                            & 0.05  \\ \hline
+Skin                                                                                                                               & 0.01  \\ \hline
+Bone Surface                                                                                                                       & 0.01  \\ \hline
+\begin{tabular}[c]{@{}c@{}}Adrenals, brain,\\ small intestine,\\ kidney, muscle,\\ pancreas, spleen,\\ thymus, uterus\end{tabular} & 0.05  \\ \hline
+\end{tabular}
+\end{tablehere}
+
+\section{Radiography, Nuclear Medicine, Imaging}
+
+$\lambda_0 = \frac{hc}{eV}, I = I_0e^{-\mu x}$
+
+$CT = 1000\left(\frac{\mu_i - \mu_w}{\mu_w}\right)$
+
+$I = I_0e^{-(\frac{\mu}{\rho})\rho x}$
+
+$Risk = D\times (Risk\: per\: dose)$
+
+$R = (L+z)tan\theta = s\left( 1+\frac{z}{L}\right)$
+
+$v = \sqrt{\frac{B}{\rho}}, B = \frac{\Delta P}{\Delta V/V},p =  I_{instant} =
+\frac{p^2}{\rho v}$
+
+$X = \frac{\Gamma A t}{d^2}$
+
+$\frac{\overline{UA}}{(SSD-SDD)} = \frac{\overline{S_1S_2}}{SDD}$
+
+% % You can even have references
+% \rule{0.3\linewidth}{0.25pt}
+% \scriptsize
+% \bibliographystyle{abstract}
+% \bibliography{refFile}
+\end{multicols}
+
+
+
+
+\end{document}

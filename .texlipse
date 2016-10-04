@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sat Dec 07 11:47:38 EST 2013
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=PCS229CheatSheet.tex
+outputFile=PCS229CheatSheet.pdf
+langSpell=en
+markDer=true
+srcDir=
